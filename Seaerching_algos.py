@@ -50,10 +50,5 @@ def bsr(x,value,l,h):
 
 print(bsr(x,1000,0,len(x)-1))
     
-    
-
-
-
-
 
 
