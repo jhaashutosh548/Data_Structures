@@ -109,5 +109,12 @@ root.inorder()
 print(" ")
 
 
+from binarytree import Node , tree, bst ,build 
+
+root = Node(50)
+root.left = Node(40)
+root.right = Node(60)
+print(Node)
+
 
 
