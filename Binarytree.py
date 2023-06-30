@@ -65,29 +65,26 @@ class node:
     
     
     def delete(self, value):
-        def min_value(self):
-            if self.left is None:
-                return self.data
-            return self.left.get_min()
-
         if value < self.data:
             if self.left:
-                self.left = self.left.delete(value)
-        if value > self.data:
+                self.left.delete(value)
+        elif value > self.data:
             if self.right:
-                self.right = self.right.delete(value)
-
-        if self.left is None:
-            temp = self.right
-            temp = None
-            return temp
-        if self.right is None:
-            temp = self.left
-            temp = None
-            return temp
-        self.data = temp.data
-        self.right = self.delete(value)        
+                self.right.delete(value)
+        else: 
+            if self.left is None and self.right is None:
+                return None
+            if self.left is None:
+                return self.right
+            if self.right is None:
+                return self.right
+            
+            temp = self.right.get_min() 
+            self.data = temp
+            self.right = self.right.delete(temp)
+        return self       
         
+
 
 
 root  = node(50)
